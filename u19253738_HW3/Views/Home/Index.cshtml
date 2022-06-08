@@ -2,33 +2,43 @@
     ViewBag.Title = "Home Page";
 }
 
+<h1>myMedia</h1>
+<h4>
+    Following contains the file description
+</h4>
 <div class="container">
     <div class="row">
-        <div class="col-xs-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+        <div class="col-sm-6">
+            <h1>Description</h1>
+            This web application is made from the MVC(Model, View and Controller) architectural pattern. The sole purpose of this web application is to enable the user to upload documents and view the uploaded documents.
+            This web application also has features and functions to enable the user to download the uploaded files, as well as delete the uploaded files from the web application.
+            The web application provides the user with three upload options. The user can upload any document type file, any image file and also videos. Each of the file types or file options the user has uploaded have their own view.
+            So in other they each have its own page where they represented. The user can navigate through the individual file type pages in order to download or delete any uploaded files. The web application also has a page called "about me" which has a desprictionof the author or developer who created this application.
+            The application is lacking a few features such as to be able to validate the file extension of each file type that is uploaded. This feature will be added soon, and it is a very important feature which will make sure the right file extension is uploaded by the user.
         </div>
-        <div class="col-xs-6">
-            @using (Html.BeginForm("Index","Home", FormMethod.Post,new { enctype = "multipart/form-data" }))
+        <div class=" col-sm-6">
+            <h1>Options</h1>
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
-            <p>
-                @Html.RadioButton("FileType", "Document") Document
-                <br />
-                @Html.RadioButton("FileType", "Image") image
-                <br />
-                @Html.RadioButton("FileType", "Video")  video
+                <p>
+                    @Html.RadioButton("FileType", "Document") Document
+                    <br />
+                    @Html.RadioButton("FileType", "Image") image
+                    <br />
+                    @Html.RadioButton("FileType", "Video")  video
 
-            </p>
-                
-               
-                    <input type="file" name="files" />
+                </p>
+
+
+                <input type="file" name="files" />
                 <br />
                 <input type="submit" value="upload" />
             }
         </div>
     </div>
 </div>
+
+
+
 
 

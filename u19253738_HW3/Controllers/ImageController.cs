@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.IO;
+using System.IO; //This library needs to be stated so that the program can read and write Input and outbut
 using u19253738_HW3.Models;
 
 
@@ -14,15 +14,20 @@ namespace u19253738_HW3.Controllers
         // GET: Image
         public ActionResult Index()
         {
+            //The filePaths array receives all the files in the folder(directory)
             string[] filePaths = Directory.GetFiles(Server.MapPath("~/Media/Images"));
 
+            //The list is instantiated of type FileModel
             List<FileModel> files = new List<FileModel>();
-
+            //The file names are copied and added to the model collection 
             foreach (string filePath in filePaths)
             {
                 files.Add(new FileModel { FileName = Path.GetFileName(filePath) });
             }
 
+            files = files.OrderBy(o => o.FileName).ToList();
+
+            //The return, returns to the list here
             return View(files);
         }
 

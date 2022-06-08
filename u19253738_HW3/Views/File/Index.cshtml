@@ -6,13 +6,14 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h1>Documents of any file type</h1>
+<h4>
+    ............"/Media/Documents/" folder
+</h4>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
-    <tr>
+    <tr style="background-color:black; color:white">
         <th>
             File Name
         </th>
@@ -24,8 +25,8 @@
     {
         <tr>
             @*<td>
-                @Html.DisplayFor(modelItem => item.FileName)
-            </td>*@
+                    @Html.DisplayFor(modelItem => item.FileName)
+                </td>*@
             <td>
                 @file.FileName
             </td>
@@ -43,10 +44,10 @@
                 </button>
             </td>
             @*<td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>*@
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>*@
         </tr>
     }
 
