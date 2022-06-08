@@ -29,7 +29,7 @@ namespace u19253738_HW3.Controllers
 
                     // store the file inside ~/App_Data/uploads folder
 
-                    var path = Path.Combine(Server.MapPath("~/App_Data/Media/Documents"), fileName);
+                    var path = Path.Combine(Server.MapPath("~/Media/Documents"), fileName);
 
                     // The chosen default path for saving
 
@@ -44,7 +44,7 @@ namespace u19253738_HW3.Controllers
 
                     // store the file inside ~/App_Data/uploads folder
 
-                    var path = Path.Combine(Server.MapPath("~/App_Data/Media/Documents"), fileName);
+                    var path = Path.Combine(Server.MapPath("~/Media/Documents"), fileName);
 
                     // The chosen default path for saving
 
@@ -59,7 +59,7 @@ namespace u19253738_HW3.Controllers
 
                     // store the file inside ~/App_Data/uploads folder
 
-                    var path = Path.Combine(Server.MapPath("~/App_Data/Media/Images"), fileName);
+                    var path = Path.Combine(Server.MapPath("~/Media/Images"), fileName);
 
                     // The chosen default path for saving
 
@@ -75,7 +75,7 @@ namespace u19253738_HW3.Controllers
 
                     // store the file inside ~/App_Data/uploads folder
 
-                    var path = Path.Combine(Server.MapPath("~/App_Data/Media/Videos"), fileName);
+                    var path = Path.Combine(Server.MapPath("~/Media/Videos"), fileName);
 
                     // The chosen default path for saving
 

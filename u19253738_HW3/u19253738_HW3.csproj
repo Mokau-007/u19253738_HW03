@@ -164,12 +164,13 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\File\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\Media\Documents\" />
-    <Folder Include="App_Data\Media\Images\" />
-    <Folder Include="App_Data\Media\Videos\" />
-    <Folder Include="Views\File\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Media\Documents\" />
+    <Folder Include="Media\Images\" />
+    <Folder Include="Media\Videos\" />
     <Folder Include="Views\Image\" />
   </ItemGroup>
   <ItemGroup>
