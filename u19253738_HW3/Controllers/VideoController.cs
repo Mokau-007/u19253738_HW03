@@ -23,6 +23,7 @@ namespace u19253738_HW3.Controllers
             {
                 files.Add(new FileModel { FileName = Path.GetFileName(filePath) });
             }
+            files = files.OrderBy(o => o.FileName).ToList();
             //The return, returns to the list here
             return View(files);
         }

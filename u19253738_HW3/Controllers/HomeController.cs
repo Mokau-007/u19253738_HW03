@@ -21,20 +21,36 @@ namespace u19253738_HW3.Controllers
         public ActionResult Index(string FileType, HttpPostedFileBase files)
         {
             
+
             //The if statement is used to assess the type file type option selected so that the file uploaded can be stored in the relevant folder
             if (FileType == "Document")
             {
                 if (files != null & files.ContentLength > 0)
                 {
+                    //List of file extention type that the user can upload
+                    var fileExtention = new [] { "txt", "doc", "docx", "pdf", "xls", "xlsx", "ppt"};
                     var fileName = Path.GetFileName(files.FileName);
+                    string fileExt = fileName.Substring(fileName.IndexOf('.') + 1);
+                    //Validates the file extention of the file uploaded before uploading
+                    if (fileExtention.Contains(fileExt))
+                    {
+                        // store the file inside ~/Media/Documents folder
 
-                    // store the file inside ~/Media/Documents folder
+                        var path = Path.Combine(Server.MapPath("~/Media/Documents"), fileName);
 
-                    var path = Path.Combine(Server.MapPath("~/Media/Documents"), fileName);
+                        // The chosen default path for saving
 
-                    // The chosen default path for saving
-
-                    files.SaveAs(path);
+                        files.SaveAs(path);
+                    }
+                    else
+                    {
+                        TempData["FileError"] = "Please insert right file type";
+                    }
+                   
+                }
+                else
+                {
+                    TempData["NoFile"] = "Please select file to upload";
                 }
             }
             //The if statement is used to assess the type file type option selected so that the file uploaded can be stored in the relevant folder
@@ -42,16 +58,27 @@ namespace u19253738_HW3.Controllers
             {
                 if (files != null & files.ContentLength > 0)
                 {
+
+                    //List of file extention type that the user can upload
+                    var fileExtention = new[] { "jpg", "jpeg", "png" };
                     var fileName = Path.GetFileName(files.FileName);
+                    string fileExt = fileName.Substring(fileName.IndexOf('.') + 1);
+                    //Validates the file extention of the file uploaded before uploading
+                    if (fileExtention.Contains(fileExt))
+                    {
+                        // store the file inside ~/Media/Documents folder
 
-                    // store the file inside ~/Media/Documents folder
+                        var path = Path.Combine(Server.MapPath("~/Media/Images"), fileName);
 
-                    var path = Path.Combine(Server.MapPath("~/Media/Images"), fileName);
+                        // The chosen default path for saving
 
-                    // The chosen default path for saving
+                        files.SaveAs(path);
+                    }
+                    else
+                    {
+                        TempData["FileError"] = "Please insert right file type";
+                    }
 
-                    files.SaveAs(path);
-                    
                 }
             }
             //The if statement is used to assess the type file type option selected so that the file uploaded can be stored in the relevant folder
